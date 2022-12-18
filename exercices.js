@@ -218,3 +218,7 @@ const counterWords = [
   }
 
   console.log(repeatCounter(counterWords));
+
+  console.log(" ");
+  console.log("----- END OF ITERATIONS -----");
+  console.log(" ");
