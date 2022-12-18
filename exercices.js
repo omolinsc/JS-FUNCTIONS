@@ -149,7 +149,7 @@ const duplicates = [
 // Crea una función que reciba por parámetro un array y el valor que desea comprobar que existe dentro de dicho array - comprueba si existe el elemento, en caso que existan nos devuelve la posición de dicho elemento y por la contra un false. Puedes usar este array para probar tu función:
 
 console.log(" ");
-console.log("ITERATION#6 -------------");
+console.log("ITERATION#7 -------------");
 
 const nameFinder = [
     'Peter',
@@ -170,7 +170,51 @@ const nameFinder = [
             return "El nombre: " + value + " está en el índice: " + i;
         }
     }
-    return "El nombre: " + value + " NO está en la lista";
+    return false + " - El nombre: " + value + " NO está en la lista";
     }
   
-    console.log(finderName(nameFinder,"Peggy"));
+    console.log(finderName(nameFinder,"Natasha"));
+
+
+
+//** Iteration #8: Contador de repeticiones**
+
+// Crea una función que nos devuelva el número de veces que se repite cada una de las palabras que lo conforma.  Puedes usar este array para probar tu función:
+
+console.log(" ");
+console.log("ITERATION#8 -------------");
+
+const counterWords = [
+    'code',
+    'repeat',
+    'eat',
+    'sleep',
+    'code',
+    'enjoy',
+    'sleep',
+    'code',
+    'enjoy',
+    'upgrade',
+    'code'
+  ];
+  function repeatCounter(param) {
+    const string = [];
+    const result = [];
+    for (const element of param){
+        if(!string.includes(element)){
+            string.push(element);
+        }
+    }
+    for (const word of string){
+        let contador = 0;
+        for (let i = 0; i < param.length; i++){
+            if (word===param[i]){
+                contador ++;
+            }
+        }
+        result.push(word + " aparece : " + contador + " veces");
+    }
+    return result;
+  }
+
+  console.log(repeatCounter(counterWords));
