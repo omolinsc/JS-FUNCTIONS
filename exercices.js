@@ -197,28 +197,53 @@ const counterWords = [
     'upgrade',
     'code'
   ];
-  function repeatCounter(param) {
-    const string = [];
-    const result = [];
-    for (const element of param){
-        if(!string.includes(element)){
-            string.push(element);
-        }
-    }
-    for (const word of string){
-        let contador = 0;
-        for (let i = 0; i < param.length; i++){
-            if (word===param[i]){
-                contador ++;
-            }
-        }
-        result.push(word + " aparece : " + contador + " veces");
-    }
-    return result;
-  }
 
-  console.log(repeatCounter(counterWords));
+
+  // function repeatCounter(param) {
+  //   const string = [];
+  //   const result = [];
+  //   for (const element of param){
+  //       if(!string.includes(element)){
+  //           string.push(element);
+  //       }
+  //   }
+  //   for (const word of string){
+  //       let contador = 0;
+  //       for (let i = 0; i < param.length; i++){
+  //           if (word===param[i]){
+  //               contador ++;
+  //           }
+  //       }
+  //       result.push(word + " aparece : " + contador + " veces");
+  //   }
+  //   return result;
+  // }
+
+  // console.log(repeatCounter(counterWords));
+
+
+    //! replanteamiento de la iteración 8
+
+    function repeatCounter2 (listaDeLaCompra) {
+
+      const blocDeNotas = {};
+      for (let i = 0; i < listaDeLaCompra.length; i++) {
+  
+        const product = listaDeLaCompra[i];
+  
+        if(product in blocDeNotas){
+          blocDeNotas[product]++;
+        } else {
+          blocDeNotas[product] = 1;
+        }
+        
+      }
+      return blocDeNotas;
+    }
+  
+    console.log(repeatCounter2(counterWords));
 
   console.log(" ");
   console.log("----- END OF ITERATIONS -----");
   console.log(" ");
+
