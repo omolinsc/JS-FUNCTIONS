@@ -27,13 +27,11 @@ console.log("ITERATION#2 -------------")
 
 const avengers = ['Hulk', 'Thor', 'IronMan', 'Captain A.', 'Spiderman', 'Captain M.'];
 function findLongestWord(param) {
-    let largestName = [];
-    let wordLength = 0;
-  for (const word of param){
-    if (word.length > wordLength){
-        wordLength = word.length;
-        largestName.length = 0;
-        largestName.push(word);
+  let largestName = param[0];
+  for (let i = 0; i < param.length; i++){
+    const word = param[i];
+    if (word.length > largestName.length){
+        largestName = word;
     }
   }
   return "EL nombre más largo es: " + largestName;
@@ -132,7 +130,7 @@ const duplicates = [
   ];
 
   //! Da el resultado pero es trampa! jeje tendría que eliminar los elementos duplicados en lugar de crear un nuevo array, aunque el resultado sería correcto nos interesa en algunos casos que se trabaje en el mismo array
-  
+
   function removeDuplicates(param) {
     const duplicatesRemoved = [];    
     for ( const word of param){
