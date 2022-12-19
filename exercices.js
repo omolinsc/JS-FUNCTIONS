@@ -130,6 +130,9 @@ const duplicates = [
     'pasta',
     'soda'
   ];
+
+  //! Da el resultado pero es trampa! jeje tendría que eliminar los elementos duplicados en lugar de crear un nuevo array, aunque el resultado sería correcto nos interesa en algunos casos que se trabaje en el mismo array
+  
   function removeDuplicates(param) {
     const duplicatesRemoved = [];    
     for ( const word of param){
